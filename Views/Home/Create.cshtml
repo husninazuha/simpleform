@@ -1,0 +1,78 @@
+﻿@model test4.Models.Question
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Question</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+
+            @*<div class="form-group">
+            <label asp-for="CheckBoxQuestion" class="control-label"></label>
+            <input asp-for="CheckBoxQuestion" class="form-control" />
+            <span asp-validation-for="CheckBoxQuestion" class="text-danger"></span>
+        </div>*@
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CheckBoxAnswer1" /> @Html.DisplayNameFor(model => model.CheckBoxAnswer1)
+                </label>
+                <div class="form-group">
+                    <label asp-for="Remarks1" class="control-label"></label>
+                    <input asp-for="Remarks1" class="form-control" />
+                    <span asp-validation-for="Remarks1" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CheckBoxAnswer2" /> @Html.DisplayNameFor(model => model.CheckBoxAnswer2)
+                </label>
+                <div class="form-group">
+                    <label asp-for="Remarks2" class="control-label"></label>
+                    <input asp-for="Remarks2" class="form-control" />
+                    <span asp-validation-for="Remarks2" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CheckBoxAnswer3" /> @Html.DisplayNameFor(model => model.CheckBoxAnswer3)
+                </label>
+                <div class="form-group">
+                    <label asp-for="Remarks3" class="control-label"></label>
+                    <input asp-for="Remarks3" class="form-control" />
+                    <span asp-validation-for="Remarks3" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CheckBoxAnswer4" /> @Html.DisplayNameFor(model => model.CheckBoxAnswer4)
+                </label>
+                <div class="form-group">
+                    <label asp-for="Remarks4" class="control-label"></label>
+                    <input asp-for="Remarks4" class="form-control" />
+                    <span asp-validation-for="Remarks4" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+            @ViewData["Message"]
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
